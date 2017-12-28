@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- corporation base page -->
+    <definition name="coporationBase" template="/WEB-INF/pages/coporationBase.jsp"/>
+    <definition name="basePage" template="/WEB-INF/pages/basePage.jsp"/>
+
+	<!-- default template --> 
+    <!--<definition name="defaultTemplate" template="/WEB-INF/pages/template/template.jsp">
+        <put-attribute name="header" value="/WEB-INF/pages/template/header.jsp" />
+        &lt;!&ndash; <put-attribute name="menu" value="/WEB-INF/pages/template/menu.jsp" /> &ndash;&gt;
+        <put-attribute name="footer" value="/WEB-INF/pages/template/footer.jsp" />
+    </definition>-->
+
+
+    
+</tiles-definitions>

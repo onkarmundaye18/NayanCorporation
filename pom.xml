@@ -38,6 +38,25 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+
+      <!-- Apache tiles -->
+      <dependency>
+          <groupId>org.apache.tiles</groupId>
+          <artifactId>tiles-extras</artifactId>
+          <version>3.0.5</version>
+      </dependency>
+      <dependency>
+		   <groupId>commons-fileupload</groupId>
+		   <artifactId>commons-fileupload</artifactId>
+		   <version>1.2.1</version> <!-- makesure correct version here -->
+	</dependency>
+	<!-- JSTL lib -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	</dependency>
+      
   </dependencies>
   <build>
     <finalName>NayanCorporation</finalName>
