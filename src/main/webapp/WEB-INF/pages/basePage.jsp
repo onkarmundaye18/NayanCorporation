@@ -6,10 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navigationBar.css">
   <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
   <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<div id = "parent-div">
+<header>
+<div class="col-sm-12">
+<ul class="navi">
+	<li><a href="#" title="">home</a></li>
+	<li><a href="#" title="">about us</a></li>
+	<li><a href="#" title="">our service</a></li>
+	<li><a href="#" title="">contact us</a></li>
+	<li><a href="#" title="">blog</a></li>
+	<li><a href="#" title="">testimonials</a></li>
+	<li><a href="#" title="">sitemap</a></li>
+</ul>
+</div>
+</header>
 
 <div class="container">
   <h2>Ultratech</h2>  
@@ -47,6 +63,6 @@
     </a>
   </div>
 </div>
-
+</div>
 </body>
 </html>
