@@ -7,61 +7,71 @@
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navigationBar.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/custom.css">
   <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
   <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <div id = "parent-div">
-<header>
-<div class="col-sm-12">
-<ul class="navi">
-	<li><a href="#" title="">home</a></li>
-	<li><a href="#" title="">about us</a></li>
-	<li><a href="#" title="">our service</a></li>
-	<li><a href="#" title="">contact us</a></li>
-	<li><a href="#" title="">blog</a></li>
-	<li><a href="#" title="">testimonials</a></li>
-	<li><a href="#" title="">sitemap</a></li>
-</ul>
-</div>
-</header>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle Navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">NAYAN CORPORATION</a>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active">
+          <a href="#">HOME</a>
+        </li>
+        <li><a href="#" data-toggle="modal" data-target="#MyModal">CEMENT</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#MyModal">ABOUT US</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#MyModal">CONTACT US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <div class="container">
-  <h2>Ultratech</h2>  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="myCarousel" data-slide="0" class="active"></li>
+      <li data-target="myCarousel" data-slide="1"></li>
+      <li data-target="myCarousel" data-slide="2"></li>
     </ol>
-
-    <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="${pageContext.request.contextPath}/resources/images/Koala.jpg" alt="Koala" style="width:100%;">
+        <img src="${pageContext.request.contextPath}/resources/images/nayanCorporation1.jpg">
+        <div class="carousel-caption">
+          <h1>We Build World</h1>
+        </div>
       </div>
-
       <div class="item">
-        <img src="${pageContext.request.contextPath}/resources/images/Penguins.jpg" alt="Penguins" style="width:100%;">
+        <img src="${pageContext.request.contextPath}/resources/images/nayanCorporation2.jpg">
+         <div class="carousel-caption">
+          <h1>We Give Strength To Family </h1>
+        </div>
       </div>
-    
       <div class="item">
-        <img src="${pageContext.request.contextPath}/resources/images/Lighthouse.jpg" alt="Lighthouse" style="width:100%;">
+        <img src="${pageContext.request.contextPath}/resources/images/nayanCorporation3.jpg">
+        <div class="carousel-caption">
+          <h1>We Make Healthy Homes</h1>
+        </div>
       </div>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
     </a>
   </div>
+      
 </div>
 </div>
 </body>

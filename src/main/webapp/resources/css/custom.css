@@ -1,0 +1,24 @@
+body{
+	padding-top: 70px;
+	padding-bottom: 40px;
+}
+
+p{
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Oswald', sans-serif;
+	color: cornsilk;
+	height:423px;
+	font-size: 65px;
+    font-stretch: extra-expanded;
+}
+
+.customGlyphicon {
+	font-size: 20px;
+}
+
+#panel{
+	padding-top: 10px;
+}
