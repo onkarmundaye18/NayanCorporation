@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/normalize.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/navigationBar.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/custom.css">
@@ -26,11 +27,11 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active">
-          <a href="#">HOME</a>
+          <a href="#" class="navItem">HOME</a>
         </li>
-        <li><a href="#" data-toggle="modal" data-target="#MyModal">CEMENT</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#MyModal">ABOUT US</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#MyModal">CONTACT US</a></li>
+        <li><a class="navItem" href="#" data-toggle="modal" data-target="#MyModal">CEMENT</a></li>
+        <li><a class="navItem" href="#" data-toggle="modal" data-target="#MyModal">ABOUT US</a></li>
+        <li><a class="navItem" href="#" data-toggle="modal" data-target="#MyModal">CONTACT US</a></li>
       </ul>
     </div>
   </div>
