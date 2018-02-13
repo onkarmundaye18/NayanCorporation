@@ -5,8 +5,13 @@
 <tiles-definitions>
 
     <!-- corporation base page -->
-    <definition name="coporationBase" template="/WEB-INF/pages/coporationBase.jsp"/>
-    <definition name="basePage" template="/WEB-INF/pages/basePage.jsp"/>
+    	<definition name="coporationBase" template="/WEB-INF/pages/coporationBase.jsp"/>
+    	<definition name="basePage" template="/WEB-INF/pages/basePage.jsp"/>
+     <definition name="home" template="/WEB-INF/pages/home.jsp"/>
+     <definition name="aboutUs" template="/WEB-INF/pages/aboutUs.jsp"/>
+     <definition name="technology" template="/WEB-INF/pages/technology.jsp"/>
+     <definition name="projects" template="/WEB-INF/pages/projects.jsp"/>
+     <definition name="contactUs" template="/WEB-INF/pages/contactUs.jsp"/>
 
 	<!-- default template --> 
     <!--<definition name="defaultTemplate" template="/WEB-INF/pages/template/template.jsp">
