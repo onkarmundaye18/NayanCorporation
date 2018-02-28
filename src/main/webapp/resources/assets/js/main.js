@@ -287,3 +287,19 @@ function aboutUs() {
 
 }
 
+function checkFileNameForUniqueness() {
+	if ($("#fileName").val() != "") {
+		data = new Object();
+		data.fileName = $("#fileName").val();
+		data.templateId = $("#templateId").val();
+
+		$.post("validateTemplateName", data, function(response) {
+			if (response.validationStatus == 1) {
+				$("#errorLabelFileName").html("");
+			} else {
+				$("#errorLabelFileName").html("Template with the same name already present.");
+			}
+		});
+	}
+}
+

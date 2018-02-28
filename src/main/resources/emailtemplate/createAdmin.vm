@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body style="font-family: Helvetica;">
+   <span style="font-size: 15px;"> 
+   Hi,
+<br>
+<br>Welcome to Benefits2Go Admin Portal!
+<br><br>
+Your credentials to access the application are as mentioned below<br><br>
+
+Username: ${username}<br>
+Password:${password}
+
+<br><br>
+  Thanks & Regards,<br>
+   ${currentUser}                                             
+    </span>
+    
+</body>
+</html>

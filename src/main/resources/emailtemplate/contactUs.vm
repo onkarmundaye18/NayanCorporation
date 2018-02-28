@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body style="font-family: Helvetica;">
+   <span style="font-size: 15px;"> 
+   Hello Admin,
+<br>
+<br>
+You have new message :<br>
+Message Details : <br>
+Name: ${senderName} <br>
+Email: ${senderEmailId} <br>
+Mobile No: ${senderMobileNumber} <br>
+Message: ${senderMessage} <br>
+<br><br>
+  Thanks & Regards,<br>
+   ${senderName}                                             
+    </span>
+    
+</body>
+</html>

@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!--
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
@@ -60,22 +63,22 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="post" action="#">
+							<form method="post" action="${pageContext.request.contextPath}/sendMailTemplate">
 								<div class="field">
 									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
+									<input type="text" name="senderName" id="name" />
 								</div>
 								<div class="field">
 									<label for="email">Email</label>
-									<input type="text" name="email" id="email" />
+									<input type="text" name="senderEmailId" id="email" />
 								</div>
                                 <div class="field">
 									<label for="mobile">Mobile</label>
-									<input type="text" name="mobile" id="mobile" />
+									<input type="text" name="senderMobileNumber" id="mobile" />
 								</div>
 								<div class="field">
 									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="3"></textarea>
+									<textarea name="senderMessage" id="message" rows="3"></textarea>
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Send Message" /></li>
