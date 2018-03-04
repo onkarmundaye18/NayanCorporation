@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/main.css" />
         <link href="${pageContext.request.contextPath}/resources/assets/css/animate.min.css"  rel="stylesheet">
 		<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/favicon.ico" type="image/x-icon">
 	</head>
 	<body class="is-loading">      
         
