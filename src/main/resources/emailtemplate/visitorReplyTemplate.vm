@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body style="font-family: Helvetica;">
+   <span style="font-size: 15px;"> 
+   Dear ${visitorName},
+<br>
+<br>
+
+Thank you so much for reaching out to us.
+We will contact you soon on your mobile number-${visitorMobileNumber} with further details.
+
+<br><br>
+  Thanks & Regards,<br>
+   Supercretes Associates Admin                                            
+    </span>
+    
+</body>
+</html>

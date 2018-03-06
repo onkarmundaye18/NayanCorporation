@@ -63,7 +63,7 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<form method="post" action="${pageContext.request.contextPath}/sendMailTemplate">
+							<form id="contactUs">
 								<div class="field">
 									<label for="name">Name</label>
 									<input type="text" name="senderName" id="name" />
@@ -81,7 +81,7 @@
 									<textarea name="senderMessage" id="message" rows="3"></textarea>
 								</div>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
+									<li><button type="submit" value="Send Message">Send Message</button></li>
 								</ul>
 							</form>
 						</section>
@@ -114,16 +114,125 @@
 					<div id="copyright">
 						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
+					
+				<!-- The Modal -->
+					<div id="myModal" class="modal">
+					
+					  <!-- Modal content -->
+					  <div class="modal-content">
+					    <div class="modal-header">
+					      <span class="close">&times;</span>
+					      <h2>Supercrete Associates</h2>
+					    </div>
+					    <div class="modal-body">
+					      <p id="result"></p>
+					    </div>
+					    <div class="modal-footer">
+					      <h5>Empowering Builder, Empowering Nation!!!</h5>
+					    </div>
+					  </div>
+					
+					</div>
 
 			</div>
 
 		<!-- Scripts -->
 			<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.min.js"></script>
+			<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.scrollex.min.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/jquery.scrolly.min.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/skel.min.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/util.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/main.js"></script>
+			<script> 
+			var contextPath= "${pageContext.request.contextPath}";
+			var modal = document.getElementById('myModal');
+			var span = document.getElementsByClassName("close")[0];
+			var response = new Object();
+			//closes modal when clicks on close sign
+			span.onclick = function() {
+			    modal.style.display = "none";
+			}
+			
+			$(document).ready(function() {
+				
+				/* Form Validation */
+				
+				$('#contactUs').validate({
+				    // Specify validation rules
+				    rules: {
+				    
+				    	senderName: "required",
+				    	senderMobileNumber: "required",
+				      senderEmailId: {
+				        required: true,
+				           email: true
+				      },
+				      senderMessage: {
+				        required: true,
+				        minlength: 5
+				      }
+				    },
+				    messages: {
+				    	senderName: "Please enter your firstname",
+				    	senderMobileNumber: "Please enter your lastname",
+				    	senderMessage: {
+				        required: "Please provide a message",
+				        minlength: "Your message must be at least 5 characters long"
+				      },
+				      senderEmailId: "Please enter a valid email address"
+				    },  
+				    /* submitHandler: function(form) {
+				      form.submit();
+				    } */
+				  });
+				
+				
+				$('#contactUs').submit(function(e) {
+			    	e.preventDefault();
+			    	response.visitorName = $("#name").val();
+					response.visitorEmailId = $("#email").val();
+					response.visitorMobileNumber = $("#mobile").val();
+					response.visitorMessage = $("#message").val();
+					console.log("response.visitorName: "+response.visitorName+" response.visitorEmailId: "+response.visitorEmailId+" response.visitorMobileNumber: "+response.visitorMobileNumber
+							+" response.visitorMessage: "+response.visitorMessage);
+					$("#contactUs")[0].reset();
+			       $.ajax({
+			           type: "POST", // method attribute of form
+			           url: contextPath+"/sendMailTemplate",  // action attribute of form
+			           data : $("#contactUs").serialize(),
+			           async : false,
+			           success : function(result) {
+							console.log("Inside success !!!"+result.msg);
+							modal.style.display = "block";
+							$("#result").text(result.msg);
+							if(result.msg != "An error occured while retriving your details.Please fill those again"){
+								replyBackToVisitor(response);
+							} 
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) { 	
+							console.log("Status: " + textStatus); console.log("Error: " + errorThrown); 
+			           }  
+			           
+			        });
+			 });
+				
+			});
+			
+			function replyBackToVisitor(response) {
+				console.log("Inside replyBackToVisitor function!!!"); 
+				$.ajax({
+					type : "POST",
+					url : contextPath+"/replyBackToVisitor",
+					data : response, // serializes the form's
+					async : false,
+					success : function(data) {
+						console.log("Inside replyBackToVisitor success !!!"+data.response);
+					}
+				});
+			}
+			
+			</script>
 
 	</body>
 </html>

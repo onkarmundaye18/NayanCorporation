@@ -4,11 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 import com.base.mail.impl.EmailService;
 
@@ -66,27 +71,68 @@ public class SupercreteBaseController {
 	}
 	
 	
-	@RequestMapping(value = "/sendMailTemplate", method = RequestMethod.POST)
-	public void sendMailTemplate(@RequestParam String senderName,
+	@RequestMapping(value = "/sendMailTemplate", method = RequestMethod.POST, headers="Accept=*/*",produces = MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody Map<String, Object> sendMailTemplate(@RequestParam String senderName,
 			@RequestParam String senderEmailId, @RequestParam String senderMobileNumber,
 			@RequestParam String senderMessage,
 			HttpServletRequest request, HttpServletResponse response) {
-		boolean success = false;
-		Map<String, Object> data = new HashMap<String, Object>();
+			Map<String, Object> map = new HashMap<String, Object>();
+			try {
+				
+				System.out.println("senderName:-"+senderName+" senderEmailId:-"+senderEmailId+" senderMobileNumber:-"+senderMobileNumber+" senderMessage:-"+senderMessage);
+				Map<String, Object> mailParam = new HashMap<String, Object>();
+				mailParam.put("senderName", senderName);
+				mailParam.put("senderEmailId", senderEmailId);
+				mailParam.put("senderMobileNumber", senderMobileNumber);
+				mailParam.put("senderMessage", senderMessage);
+				String result = emailservice.sendContactUsMail(mailParam);
+				if(StringUtils.isBlank(result)){
+					map.put("success", "false");
+					map.put("msg", "An error occured while retriving your details.Please fill those again");
+					//return "An error occured while retriving your details.Please fill those again";
+					return map;
+				}
+				map.put("success", "true");
+				map.put("msg", "Thank you for getting in touch with us! We will get back to you soon.");
+				//return "Thank you so much for contacting with Supercrete Associates, You will get your response soon!!!";
+				return map;
+			} catch (Exception e) {
+				System.out.println("Error occurred while saving the template - "+ e);
+				map.put("success", "false");
+				map.put("msg", "An error occured while retriving your details.Please fill those again");
+				//return "An error occured while retriving your details.Please fill those again";
+				return map;
+			}
+	}
+	
+	@RequestMapping(value = "/replyBackToVisitor", method = {RequestMethod.POST}, headers="Accept=*/*" , produces = MediaType.APPLICATION_JSON_VALUE)
+	public  @ResponseBody Map<String, Object> replyBackToVisitor(String visitorName,String visitorEmailId, String visitorMobileNumber,
+			String visitorMessage) {
+		Map<String, Object> map = new HashMap<String, Object>();
 		try {
 			
-			System.out.println("senderName:-"+senderName+" senderEmailId:-"+senderEmailId+" senderMobileNumber:-"+senderMobileNumber+" senderMessage:-"+senderMessage);
+			System.out.println("visitorName:-"+visitorName+" visitorEmailId:-"+visitorEmailId+" visitorMobileNumber:-"+visitorMobileNumber+" visitorMessage:-"+visitorMessage);
 			Map<String, Object> mailParam = new HashMap<String, Object>();
-			mailParam.put("senderName", senderName);
-			mailParam.put("senderEmailId", senderEmailId);
-			mailParam.put("senderMobileNumber", senderMobileNumber);
-			mailParam.put("senderMessage", senderMessage);
-			String result = emailservice.sendContactUsMail(mailParam);
-			System.out.println("Email send result:- "+result);
-			success = true;
+			mailParam.put("visitorName", visitorName);
+			mailParam.put("visitorEmailId", visitorEmailId);
+			mailParam.put("visitorMobileNumber", visitorMobileNumber);
+			mailParam.put("visitorMessage", visitorMessage);
+			String result = emailservice.sendVisitorsReplyEmail(mailParam);
+			System.out.println("Visitor Result:- "+result);
+			if(StringUtils.isBlank(result)){
+				map.put("success", "false");
+				map.put("msg", "An error occured while retriving your details.Please fill those again");
+				return map;
+			}
+			map.put("success", "true");
+			map.put("msg", "Thank you for getting in touch with us! We will get back to you soon.");
+			return map;
 		} catch (Exception e) {
-			System.out.println("Error occurred while saving the template - "+ e);
+			e.printStackTrace();
+			map.put("success", "false");
+			map.put("msg", "An error occured while retriving your details.Please fill those again");
+			return map;
 		}
-	}
 
+	}
 }

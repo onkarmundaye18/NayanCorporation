@@ -32,14 +32,32 @@ public class EmailService {
 			mailSendStatus = eMailComponent.sendMail(mail, mailParam);
 			if(mailSendStatus){
 				result = "SUCCESS";
-			}else{
-				result = "Failed mail send!!!";
 			}
 		}catch(Exception e){
 			System.out.println("Error in sendContactUsMail method : " + e);
+			return result;
 		}
-
 		return result;
+
+	}
+	
+	public String sendVisitorsReplyEmail(Map<String, Object> mailParam){
+		System.out.println("sendVisitorsReplyEmail method starts");
+		String result = "";
+		boolean mailSendStatus = false;
+		Mail mail = new Mail(Constants.EmailConstants.MAIL_SENDER_EMAIL_ID, mailParam.get("visitorEmailId").toString(),
+			Constants.EmailConstants.VISITOR_REPLY_SUBJECT, Constants.EmailTemplateName.VISITORS_REPLY_MAIL);
+		try{
+			mailSendStatus = eMailComponent.sendMail(mail, mailParam);
+			if(mailSendStatus){
+				result = "SUCCESS";
+			}
+		}catch(Exception e){
+			System.out.println("Error in sendVisitorsReplyEmail method : " + e);
+			return result;
+		}
+		return result;
+
 	}
 
 }
