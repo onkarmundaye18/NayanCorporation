@@ -22,7 +22,7 @@ public class EmailService {
 	@Autowired
 	private EmailComponent eMailComponent;
 
-	public String sendContactUsMail(Map<String, Object> mailParam){
+	/*public String sendContactUsMail(Map<String, Object> mailParam){
 		System.out.println("sendContactUsMail method starts");
 		String result = "";
 		boolean mailSendStatus = false;
@@ -34,6 +34,7 @@ public class EmailService {
 				result = "SUCCESS";
 			}
 		}catch(Exception e){
+			e.printStackTrace();
 			System.out.println("Error in sendContactUsMail method : " + e);
 			return result;
 		}
@@ -58,6 +59,30 @@ public class EmailService {
 		}
 		return result;
 
+	}*/
+	
+	public String composeEmail(Map<String, Object> mailParam,Map<String, Object> mailModelObj){
+		System.out.println("composeEmail method starts");
+		String result = "";
+		boolean mailSendStatus = false;
+		Mail mail = new Mail(mailModelObj.get("senderEmailId").toString(), mailModelObj.get("receiverEmailId").toString(),
+				mailModelObj.get("emailSubject").toString(), mailModelObj.get("emailTemplateName").toString());
+		try{
+			mailSendStatus = eMailComponent.sendMail(mail, mailParam);
+			if(mailSendStatus){
+				result = "SUCCESS";
+			}
+		}catch(Exception e){
+			System.out.println("Error in composeEmail method : " + e);
+			return result;
+		}
+		return result;
+
+	}
+	
+	
+	public void seteMailComponent(EmailComponent eMailComponent){
+		this.eMailComponent = eMailComponent;
 	}
 
 }

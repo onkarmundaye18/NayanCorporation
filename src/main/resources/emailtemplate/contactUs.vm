@@ -2,22 +2,60 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
 </head>
 <body style="font-family: Helvetica;">
    <span style="font-size: 15px;"> 
-   Hello Admin,
 <br>
 <br>
-You have new message :<br>
-Message Details : <br>
-Name: ${senderName} <br>
-Email: ${senderEmailId} <br>
-Mobile No: ${senderMobileNumber} <br>
-Message: ${senderMessage} <br>
-<br><br>
-  Thanks & Regards,<br>
-   ${senderName}                                             
-    </span>
     
+    <div style="font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif;">
+    <table style="width: 100%;">
+      <tr>
+        <td></td>
+        <td bgcolor="#FFFFFF">
+          <div style="padding: 15px; max-width: 600px;margin: 0 auto;display: block; border-radius: 0px;padding: 0px; border: 1px solid lightseagreen;">
+            <table style="width: 100%;background: #ed2f2f;">
+              <tr>
+                <td></td>
+                <td>
+                  <div>
+                    <table width="100%">
+                      <tr>
+                        <td rowspan="2" style="text-align:center;padding:10px;">
+       <img style="float:left; "  src='cid:imageContent'/>
+       
+       <span style="color:white;float:right;font-size: 13px;font-style: italic;margin-top: 20px; padding:10px; font-size: 14px; font-weight:normal;">
+       "EMPOWERING BUILDERS, EMPOWERING NATION"<span></span></span></td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+                <td></td>
+              </tr>
+            </table>
+            <table style="padding: 10px;font-size:14px; width:100%;">
+              <tr>
+                <td style="padding:10px;font-size:14px; width:100%;">
+                    <p>Hi Supercreate,</p>
+                    <p><br /> ${visitorMessage}<br /></p>
+                    <p> My Contact Details: <br /></p>
+                    <p>Email: ${visitorEmailId}<br /></p>
+                    <p>Mobile No: ${visitorMobileNumber}<br /></p>
+                    <p>Thanks</p>
+                    <p>${visitorName}</p>
+                  <!-- /Callout Panel -->
+                  <!-- FOOTER -->
+                 </td>
+              </tr>
+     <tr>
+     <td>
+     <div align="center" style="font-size:12px; margin-top:20px; padding:5px; width:100%; background:#eee;">
+                    © 2016 <a href="http://seedoconline.com" target="_blank" style="color:#333; text-decoration: none;">seedoconline.com</a>
+                  </div>
+                </td>
+     </tr>
+            </table>
+          </div>
 </body>
 </html>

@@ -12,6 +12,7 @@
      <definition name="technology" template="/WEB-INF/pages/technology.jsp"/>
      <definition name="projects" template="/WEB-INF/pages/projects.jsp"/>
      <definition name="contactUs" template="/WEB-INF/pages/contactUs.jsp"/>
+     <!-- <definition name="sendMailTemplate" template="/WEB-INF/pages/contactUs.jsp"/> -->
 
 	<!-- default template --> 
     <!--<definition name="defaultTemplate" template="/WEB-INF/pages/template/template.jsp">

@@ -1,12 +1,16 @@
 package com.base.mail;
 
+import java.io.File;
+import java.net.URL;
 import java.util.Map;
 
+import javax.activation.DataSource;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mail.MailException;
 import org.springframework.mail.MailParseException;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -41,11 +45,12 @@ public class EmailComponent {
 		String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "./emailtemplate/" + mail.getTemplateName(), "UTF-8",
 			mailParams);
 		try{
-			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+			MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true,"UTF-8");
 			helper.setFrom(mail.getMailFrom());
 			helper.setTo(mail.getMailTo());
 			helper.setSubject(mail.getMailSubject());
 			helper.setText(text, true);
+			helper.addInline("imageContent",(File) mailParams.get("imgResource"));
 			mailSender.send(mimeMessage);
 		}catch(MessagingException e){
 			flag = false;

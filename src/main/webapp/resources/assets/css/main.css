@@ -4617,3 +4617,22 @@
     background-color: #B9888E;
     color: white;
 }
+
+/* Spinner style*/
+div#spinner {				
+
+				/* new code*/
+				display: none;
+				height: 95px;
+				width:95px;
+				position: fixed;
+				z-index: 2; /* Sit on top */
+				top: 40%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				vertical-align: middle;				
+				background: url("../../images/spinnertrial.gif") no-repeat center rgba(0, 0, 0, 0);	
+				text-align: center;				
+				font: normal 10px Tahoma, Geneva, sans-serif;
+
+}

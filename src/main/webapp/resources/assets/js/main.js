@@ -5,6 +5,7 @@
 */
 
 (function($) {
+	var path='${pageContext.request.contextPath}';
 
 	skel.breakpoints({
 		xlarge:	'(max-width: 1680px)',
@@ -264,7 +265,21 @@
 			}
 
 	});
-
+	
+	/*   **************************Onkar's Javascript Code ******************************** */
+	
+	$("#saveTemplateForm").on("submit", function() {
+		var flag = validateTemplateDetailsForm();
+		if (!flag) {
+			return flag;
+		}
+		
+		
+		sendSaveTemplateAjax(contextPath);
+		return false;
+	});
+	
+	
 })(jQuery);
 
 /*   **************************Onkar's Javascript Code ******************************** */

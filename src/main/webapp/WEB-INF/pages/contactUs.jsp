@@ -115,6 +115,9 @@
 						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
 					
+				<!--The Spinner part  -->
+				<div id="spinner"></div>
+					
 				<!-- The Modal -->
 					<div id="myModal" class="modal">
 					
@@ -149,6 +152,7 @@
 			var modal = document.getElementById('myModal');
 			var span = document.getElementsByClassName("close")[0];
 			var response = new Object();
+			var spinnerVisible = false;
 			//closes modal when clicks on close sign
 			span.onclick = function() {
 			    modal.style.display = "none";
@@ -162,33 +166,43 @@
 				    // Specify validation rules
 				    rules: {
 				    
-				    	senderName: "required",
-				    	senderMobileNumber: "required",
-				      senderEmailId: {
-				        required: true,
-				           email: true
-				      },
-				      senderMessage: {
-				        required: true,
-				        minlength: 5
-				      }
+				    	  senderName: {
+				    		  required:true
+				    	  },
+				    	  senderMobileNumber: {
+				    		  required:true,
+				    		  minlength: 10
+				    	  },
+					      senderEmailId: {
+					        required: true,
+					           email: true
+					      },
+					      senderMessage: {
+					        required: true,
+					        minlength: 5
+					      }
 				    },
 				    messages: {
 				    	senderName: "Please enter your firstname",
-				    	senderMobileNumber: "Please enter your lastname",
+				    	senderMobileNumber: {
+				    		 required: "Please provide a message",
+						     minlength: "Your message must be at least 5 characters long"
+				    	},
 				    	senderMessage: {
-				        required: "Please provide a message",
-				        minlength: "Your message must be at least 5 characters long"
+					        required: "Please provide a message",
+					        minlength: "Your message must be at least 5 characters long"
 				      },
-				      senderEmailId: "Please enter a valid email address"
-				    },  
-				    /* submitHandler: function(form) {
-				      form.submit();
-				    } */
+				      senderEmailId: {
+				    	  required: "Please enter a valid email address"
+				      }
+				    }  
+				  /*   	submitHandler: function(form) {
+				    		formSubmit();
+				      	
+				    }  */
 				  });
 				
-				
-				$('#contactUs').submit(function(e) {
+	 			 $('#contactUs').submit(function(e) {
 			    	e.preventDefault();
 			    	response.visitorName = $("#name").val();
 					response.visitorEmailId = $("#email").val();
@@ -197,13 +211,15 @@
 					console.log("response.visitorName: "+response.visitorName+" response.visitorEmailId: "+response.visitorEmailId+" response.visitorMobileNumber: "+response.visitorMobileNumber
 							+" response.visitorMessage: "+response.visitorMessage);
 					$("#contactUs")[0].reset();
+					showProgress();
 			       $.ajax({
 			           type: "POST", // method attribute of form
 			           url: contextPath+"/sendMailTemplate",  // action attribute of form
-			           data : $("#contactUs").serialize(),
-			           async : false,
+			           data : response,
+			           async : true,
 			           success : function(result) {
 							console.log("Inside success !!!"+result.msg);
+							hideProgress();
 							modal.style.display = "block";
 							$("#result").text(result.msg);
 							if(result.msg != "An error occured while retriving your details.Please fill those again"){
@@ -215,9 +231,42 @@
 			           }  
 			           
 			        });
-			 });
+			 });  
 				
 			});
+			
+			function formSubmit(){
+				console.log("Inside form submit !!!");
+		    	e.preventDefault();
+		    	response.visitorName = $("#name").val();
+				response.visitorEmailId = $("#email").val();
+				response.visitorMobileNumber = $("#mobile").val();
+				response.visitorMessage = $("#message").val();
+				console.log("response.visitorName: "+response.visitorName+" response.visitorEmailId: "+response.visitorEmailId+" response.visitorMobileNumber: "+response.visitorMobileNumber
+						+" response.visitorMessage: "+response.visitorMessage);
+				$("#contactUs")[0].reset();
+				showProgress();
+		       $.ajax({
+		           type: "POST", // method attribute of form
+		           url: contextPath+"/sendMailTemplate",  // action attribute of form
+		           data : response,
+		           async : true,
+		           success : function(result) {
+						console.log("Inside success !!!"+result.msg);
+						hideProgress();
+						modal.style.display = "block";
+						$("#result").text(result.msg);
+						if(result.msg != "An error occured while retriving your details.Please fill those again"){
+							replyBackToVisitor(response);
+						} 
+					},
+					error: function(XMLHttpRequest, textStatus, errorThrown) { 	
+						console.log("Status: " + textStatus); console.log("Error: " + errorThrown); 
+		           }  
+		           
+		        });
+				
+			}
 			
 			function replyBackToVisitor(response) {
 				console.log("Inside replyBackToVisitor function!!!"); 
@@ -225,11 +274,30 @@
 					type : "POST",
 					url : contextPath+"/replyBackToVisitor",
 					data : response, // serializes the form's
-					async : false,
-					success : function(data) {
-						console.log("Inside replyBackToVisitor success !!!"+data.response);
+					async : true,
+					success : function(result) {
+						/* hideProgress();
+						modal.style.display = "block";
+						$("#result").text(result.msg); */
+						console.log("Inside replyBackToVisitor success !!!"+result.msg);
 					}
 				});
+			}
+			
+			function showProgress() {
+			    if (!spinnerVisible) {
+			        $("div#spinner").fadeIn("fast");
+			        spinnerVisible = true;
+			    }
+			}
+
+			function hideProgress() {
+			    if (spinnerVisible) {
+			        var spinner = $("div#spinner");
+			        spinner.stop();
+			        spinner.fadeOut("fast");
+			        spinnerVisible = false;
+			    }
 			}
 			
 			</script>
