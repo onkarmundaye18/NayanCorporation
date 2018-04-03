@@ -263,10 +263,14 @@
 				});
 
 			}
-
+			
 	});
 	
 	/*   **************************Onkar's Javascript Code ******************************** */
+	$( document ).ready(function() {
+		window.onscroll = function() {scrollFunction()};
+	    console.log( "ready!" );
+	});
 	
 	$("#saveTemplateForm").on("submit", function() {
 		var flag = validateTemplateDetailsForm();
@@ -282,7 +286,19 @@
 	
 })(jQuery);
 
-/*   **************************Onkar's Javascript Code ******************************** */
+function scrollFunction() {
+	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+	document.getElementById("myBtn").style.display = "block";
+	} else {
+	document.getElementById("myBtn").style.display = "none";
+	}
+}
+
+function topFunction() {
+		document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+}
+
 function aboutUs() {
 		$.ajax({
 			url : "aboutUs",

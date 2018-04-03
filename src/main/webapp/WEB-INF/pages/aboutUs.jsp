@@ -17,7 +17,7 @@
 		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/fav.ico" type="image/x-icon">
 	</head>
 	<body class="is-loading">
-
+	<i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -85,6 +85,6 @@
 			<script src="${pageContext.request.contextPath}/resources/assets/js/skel.min.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/util.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/main.js"></script>
-
+			
 	</body>
 </html>
