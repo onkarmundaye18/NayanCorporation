@@ -19,7 +19,7 @@
 	</head>
 	<body class="is-loading">      
         
-        
+        <i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
@@ -92,6 +92,21 @@
 			<script src="${pageContext.request.contextPath}/resources/assets/js/skel.min.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/util.js"></script>
 			<script src="${pageContext.request.contextPath}/resources/assets/js/main.js"></script>
+			<script>
+			window.onscroll = function() {scrollFunction()};
 
+			function scrollFunction() {
+    			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        		document.getElementById("myBtn").style.display = "block";
+    			} else {
+        		document.getElementById("myBtn").style.display = "none";
+    			}
+			}
+
+			function topFunction() {
+   				document.body.scrollTop = 0;
+    			document.documentElement.scrollTop = 0;
+			}
+			</script>
 	</body>
 </html>
