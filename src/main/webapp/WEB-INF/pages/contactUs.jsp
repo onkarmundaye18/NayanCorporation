@@ -18,7 +18,7 @@
 		<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-loading">
-
+		<i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
