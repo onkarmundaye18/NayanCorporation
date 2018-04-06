@@ -10,24 +10,17 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-<head>
-<title>Elements Reference - Massively by HTML5 UP</title>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/assets/css/main.css" />
-<noscript>
-	<link rel="stylesheet"
-		href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" />
-</noscript>
-<link rel="icon" href="${pageContext.request.contextPath}/resources/images/fav.ico" type="image/x-icon">
-<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/fav.ico" type="image/x-icon">
-</head>
-<body class="is-loading">
-
-	<!-- Wrapper -->
-	<div id="wrapper">
+	<head>
+		<title>Elements Reference - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+		<i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
 		<!-- Header -->
 		<header id="header"> <a
