@@ -121,12 +121,12 @@ public class SupercreteBaseController {
 				mailModel.put("receiverEmailId",Constants.EmailConstants.MAIL_RECEIVER_EMAIL_ID);
 				mailModel.put("emailSubject",Constants.EmailConstants.VISITOR_SUBJECT);
 				mailModel.put("emailTemplateName",Constants.EmailTemplateName.CONTACT_US_MAIL);
-				String result = emailservice.composeEmail(mailParam, mailModel);
+				/*String result = emailservice.composeEmail(mailParam, mailModel);
 				if(StringUtils.isBlank(result)){
 					map.put("success", "false");
 					map.put("msg", "An error occured while retriving your details.Please fill those again");
 					return map;
-				}
+				}*/
 				map.put("success", "true");
 				map.put("msg", "Thank you for getting in touch with us! We will get back to you soon.");
 				return map;
@@ -159,13 +159,13 @@ public class SupercreteBaseController {
 			mailModel.put("receiverEmailId",visitorEmailId);
 			mailModel.put("emailSubject",Constants.EmailConstants.VISITOR_REPLY_SUBJECT);
 			mailModel.put("emailTemplateName",Constants.EmailTemplateName.VISITORS_REPLY_MAIL);
-			String result = emailservice.composeEmail(mailParam, mailModel);
+			/*String result = emailservice.composeEmail(mailParam, mailModel);
 			System.out.println("Visitor Result:- "+result);
 			if(StringUtils.isBlank(result)){
 				map.put("success", "false");
 				map.put("msg", "An error occured while retriving your details.Please fill those again");
 				return map;
-			}
+			}*/
 			map.put("success", "true");
 			map.put("msg", "Thank you for getting in touch with us! We will get back to you soon.");
 			return map;
