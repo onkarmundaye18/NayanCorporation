@@ -49,7 +49,7 @@
 
 				<!-- Main -->
 					<div id="main">
-
+						<span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/about-us-banner.jpg" alt="" style="margin-bottom: -93px"/><br></span>
 						<!-- Post -->
 							<section class="post">
                                 <article class="post featured">

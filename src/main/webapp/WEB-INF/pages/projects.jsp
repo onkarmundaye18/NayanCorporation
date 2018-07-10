@@ -49,7 +49,7 @@
 
 				<!-- Main -->
 					<div id="main">
-
+						<span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/Technology.jpg" alt="" style="margin-bottom: -93px"/><br></span>
 						<!-- Post -->
 							<section class="post">
 								<header class="major">

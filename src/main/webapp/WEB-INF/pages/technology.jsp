@@ -49,27 +49,49 @@
 
 				<!-- Main -->
 					<div id="main">
-
+						<span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/Technology.jpg" alt="" style="margin-bottom: -93px"/><br></span>
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-                                    <h1><a>Plant & Machinery</a></h1>
+								
+								<h2><a>PLANT & MACHINARY</a></h2>
 								</header>	
                                 
                                 <!-- Box -->
 									<h2>Quality Cognizance</h2>
 									<div class="box">
-										<p>Quantity without Quality makes no sense, we at Supercrete are committed at providing Quality concrete  to each and every client of ours. To ensure this we have a highly advanced lab at our plant equipped with the most advanced machines available in the RMC market.
-                                        </p>
+										<b><p>Quantity without Quality makes no sense, we at Supercrete are committed at providing Quality concrete  to each and every client of ours. To ensure this we have a highly advanced lab at our plant equipped with the most advanced machines available in the RMC market.
+                                        </p></b>
 									</div>
 
 				                            
 									<h3>Test &amp; Machine</h3>
-									<p><span class="image left"><img src="${pageContext.request.contextPath}/resources/images/ImpactTestMachine.jpg" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-									<p><span class="image right"><img src="${pageContext.request.contextPath}/resources/images/CompressionTestMachine.jpg" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-                                    <p><span class="image left"><img src="${pageContext.request.contextPath}/resources/images/PanTestMixer.jpg" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-                                    <p><span class="image right"><img src="${pageContext.request.contextPath}/resources/images/ACTestMachine.jpg" alt="" /></span>Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-
+									<p><span class="image left"><img src="${pageContext.request.contextPath}/resources/images/CompressionTestMachine.jpg" alt="" /></span><b>Compression Testing Machine</b> is used to determine how a product or material reacts when it is compressed, squashed, crushed or flattened by measuring fundamental parameters that determine the specimen behavior under a compressive load.<br>We perform three types of testing : <br> 1. Flexure/Bend<br>2. Spring Testing<br>3. Top-load/Crush<br>This machine used to determine batch quality,consistency in manufacture,aid in the design process,reduces material cost.</p><hr>
+									<p><span class="image right"><img src="${pageContext.request.contextPath}/resources/images/ImpactTestMachine.jpg" alt="" /></span><b>Impact Testing Machine</b> to evaluate an object's capacity to withstand high-rate loading and it is commonly used to determine the service life of a part or material. Impact resistance can be among the most challenging qualities to measure.<br>The capacity evaluate this property is particularly useful in assessing product liability and safety. </p><br><hr>
+                                    <p><span class="image left"><img src="${pageContext.request.contextPath}/resources/images/PanTestMixer.jpg" alt="" /></span><b>Laboratory Concrete Mixer</b> is used to manufacture quality specimens, concrete should be efficiently mixed before molding. <br>We ensure that efficient mixing concrete that the surface of all aggregate particles is coated with cement paste and also makes sure that uniformity is also created in the mixture<br><br><br><br><br><br><hr>
+                                    <p><span class="image right"><img src="${pageContext.request.contextPath}/resources/images/HotAirOven.jpg" alt="" /></span><b>Hot Air Oven</b> is elegantly used for day to day heating, curing, dry sterilization and exposures applicable for high temperature testing with accuracy.<br><br>In order to make a best concrete cube, we are using highly durable and digitally controlled hot air oven.</p>
+                                    <br>
+									<br>
+                                    <hr>
+									<h2> Other Equipments :</h2>
+									
+									<div class="box alt">
+										<div class="row 50% uniform">
+											<div class="4u"><span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/ACTestMachine.jpg" alt="" /></span></div>
+											<div class="4u"><span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/CubeTank.jpg" alt="" /></span></div>
+											<div class="4u$"><span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/SievesAndOtherSmallEquipment.jpg" alt="" /></span></div>
+											<!-- Break -->
+											<div class="4u"><span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/Thermometer.jpg" alt="" /></span></div>
+											<div class="4u"><span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/CubeTank.jpg" alt="" /></span></div>
+											<div class="4u$"><span class="image fit"><img src="${pageContext.request.contextPath}/resources/images/ACTestMachine.jpg" alt="" /></span></div>
+											<!-- Break -->
+											<div class="4u"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+											<div class="4u"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
+											<div class="4u$"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+										</div>
+									</div>
+									
+									
 									<hr />
 								
                         </section>
