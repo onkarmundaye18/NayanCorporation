@@ -13,8 +13,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" /></noscript>
-		<link rel="icon" href="${pageContext.request.contextPath}/resources/images/fav.ico" type="image/x-icon">
-		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/fav.ico" type="image/x-icon">
+		<link rel="icon" href="${pageContext.request.contextPath}/resources/images/supercrete.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/supercrete.ico" type="image/x-icon">
 	</head>
 	<body class="is-loading">
 		<i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>
@@ -53,65 +53,50 @@
 						<!-- Post -->
 							<section class="post">
 								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<h1><a>Our Esteemed Clients</a></h1>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
-							</section>
+								
+									<!-- New section list of customers -->
+									<div class="row">
+										<div class="6u 12u$(small)">
 
-					</div>
+											<ul>
+												<li>DR. Agrawal Infracon Pvt. Ltd.</li>
+												<li>RJP Infra Pvt. Ltd.</li>
+												<li>Amit Steel Industries</li>
+												<li>Radhe Raj Constructions</li>
+												<li>Shree Ram Constructions</li>
+												<li>Pujeh Garg and Company at Sirpur Talav</li>
+												<li>GSD Constructions Indore</li>
+												<li>Srajan Infra Developers</li>
+												<li>Ishwar Enterprises</li>
+												<li>Sairaj Constructions</li>	
+											</ul>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="text" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="3"></textarea>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+										</div>
+										<div class="6u$ 12u$(small)">
+
+											<ul>
+												<li>Nyati Constructions and Engineers Pvt. Ltd.</li>
+												<li>Saffron City</li>
+												<li>Clifton Park</li>
+												<li>Khushi Ram Somani Projects</li>
+												<li>Highway Infra Pvt. Ltd.</li>
+												<li>DPS (RAU),Indore</li>
+												<li>Trishla Developers Pvt. Ltd.</li>
+												<li>Nidhi Associates</li>
+												<li>Rachana Infra Pvt. Ltd.</li>
+												<li>Satguru Developers</li>
+																							
+											</ul>
+
+										</div>
+									</div>
+							</section>						
+					
+
+					</div>					
+			
 
 				<!-- Copyright -->
 					<div id="copyright">

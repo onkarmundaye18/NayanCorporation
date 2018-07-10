@@ -13,8 +13,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" /></noscript>
-		<link rel="icon" href="${pageContext.request.contextPath}/resources/images/fav.ico" type="image/x-icon">
-		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/fav.ico" type="image/x-icon">
+		<link rel="icon" href="${pageContext.request.contextPath}/resources/images/supercrete.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/supercrete.ico" type="image/x-icon">
 	</head>
 	<body class="is-loading">
 	<i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>

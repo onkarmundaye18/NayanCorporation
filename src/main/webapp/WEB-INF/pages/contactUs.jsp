@@ -10,17 +10,24 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Elements Reference - Massively by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-loading">
-		<i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+<title>Elements Reference - Massively by HTML5 UP</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet"
+		href="${pageContext.request.contextPath}/resources/assets/css/noscript.css" />
+</noscript>
+		<link rel="icon" href="${pageContext.request.contextPath}/resources/images/supercrete.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/supercrete.ico" type="image/x-icon">
+</head>
+<body class="is-loading">
+	<i onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up"></i>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
 		<!-- Header -->
 		<header id="header"> <a
@@ -87,22 +94,23 @@
 			<ul class="actions">
 				<li><button type="submit" value="Send Message">Send
 						Message</button></li>
+				<li><input type="reset" value="Reset" id="resetBtn"/></li>
 			</ul>
 		</form>
 		</section> <section class="split contact"> <section class="alt">
 		<h3>Address</h3>
 		<p>
-			1234 Somewhere Road #87257<br /> Nashville, TN 00000-0000
+			24/1, GRAM MUNDLA NAYTA,<br /> NEAR N.K. WAREHOUSE,<br />NEMAWAR ROAD,INDORE-452001
 		</p>
 		</section> <section>
 		<h3>Phone</h3>
 		<p>
-			<a href="#">(000) 000-0000</a>
+			<a href="#">+918839000658</a>
 		</p>
 		</section> <section>
 		<h3>Email</h3>
 		<p>
-			<a href="#">info@untitled.tld</a>
+			<a href="#">supercretemail@gmail.com</a>
 		</p>
 		</section> <section>
 		<h3>Social</h3>
@@ -176,48 +184,6 @@
 			
 			$(document).ready(function() {
 				
-				/* Form Validation */
-				
-				/* $('#contactUs').validate({
-				    // Specify validation rules
-				    rules: {
-				    
-				    	  senderName: {
-				    		  required:true
-				    	  },
-				    	  senderMobileNumber: {
-				    		  required:true,
-				    		  minlength: 10
-				    	  },
-					      senderEmailId: {
-					        required: true,
-					           email: true
-					      },
-					      senderMessage: {
-					        required: true,
-					        minlength: 5
-					      }
-				    },
-				    messages: {
-				    	senderName: "Please enter your firstname",
-				    	senderMobileNumber: {
-				    		 required: "Please provide a message",
-						     minlength: "Your message must be at least 5 characters long"
-				    	},
-				    	senderMessage: {
-					        required: "Please provide a message",
-					        minlength: "Your message must be at least 5 characters long"
-				      },
-				      senderEmailId: {
-				    	  required: "Please enter a valid email address"
-				      }
-				    }  
-				  /*   	submitHandler: function(form) {
-				    		formSubmit();
-				      	
-				    }  
-				  }); */
-				
 	 			 $('#contactUs').submit(function(e) {
 			    	e.preventDefault();
 			    	response.visitorName = $("#name").val();
@@ -232,98 +198,82 @@
 					
 					console.log("response.visitorName: "+response.visitorName+" response.visitorEmailId: "+response.visitorEmailId+" response.visitorMobileNumber: "+response.visitorMobileNumber
 							+" response.visitorMessage: "+response.visitorMessage);
-					$("#contactUs")[0].reset();
+					
 					/*  Jaquery form validation */
 					 $(".error").remove();
  
 				    if (visitorName.length < 1) {
 				      $('#name').after('<p class="error" style="color:red;">This field is required</p>');
+				      $('#name').focus();
 				      flag = false;
 				    }
 				    if (visitorMobileNumber.length < 1) {
 				      $('#mobile').after('<p class="error" style="color:red;">This field is required</p>');
 				      flag = false;
-				    }else if(visitorMobileNumber.length < 10){
-				    	$('#mobile').after('<p class="error" style="color:red;">MobileNumber must be 10 digit long</p>');
-				    	flag = false;
+				    }else {
+				    	var cellRegEx = /^\d{10}$/;
+				    	var validMobile = cellRegEx.test(visitorMobileNumber);
+				    	if (!validMobile){
+				    		$('#mobile').after('<p class="error" style="color:red;">Mobile number must be 10 digit numeric</p>');
+				    		$('#mobile').focus();
+					    	flag = false;
+				    	}
+				    	
 				    }
 				    if (visitorEmailId.length < 1) {
 				      $('#email').after('<p class="error" style="color:red;">This field is required</p>');
+				      $('#email').focus();
 				      flag = false;
-				    }  else {
-				      //var regEx = /^[A-Z0-9][A-Z0-9._%+-]{0,63}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/;
+				    }else {
 				      var regEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 				      var validEmail = regEx.test(visitorEmailId);
 				      if (!validEmail) {
 				        $('#email').after('<p class="error" style="color:red;">Enter a valid email</p>');
+				        $('#email').focus();
 				        flag = false;
-				      } 
-				    }
+				      }
+				      
+				    }				    
 				    if (visitorMessage.length < 1) {
 					      $('#message').after('<p class="error" style="color:red;">This field is required</p>');
+					      $('#message').focus();
 					      flag = false;
-					    }
+					}
 					/* End of form validation */
 					
-				if(flag == true){ // if all validations are valid then only submit ajax
-					showProgress();
-				       $.ajax({
-				           type: "POST", // method attribute of form
-				           url: contextPath+"/sendMailTemplate",  // action attribute of form
-				           data : response,
-				           async : true,
-				           success : function(result) {
-								console.log("Inside success !!!"+result.msg);
-								hideProgress();
-								modal.style.display = "block";
-								$("#result").text(result.msg);
-								if(result.msg != "An error occured while retriving your details.Please fill those again"){
-									replyBackToVisitor(response);
-								} 
-							},
-							error: function(XMLHttpRequest, textStatus, errorThrown) { 	
-								console.log("Status: " + textStatus); console.log("Error: " + errorThrown); 
-				           }  
-				           
-				        });
-				}					
+					if(flag == true){ 													// if all validations are valid then only submit ajax
+						$("#contactUs")[0].reset();										//resetting form values
+						showProgress();
+					       $.ajax({
+					           type: "POST", 											// method attribute of form
+					           url: contextPath+"/sendMailTemplate",  					// action attribute of form
+					           data : response,
+					           async : true,
+					           success : function(result) {
+									console.log("Inside success !!!"+result.msg);
+									hideProgress();
+									modal.style.display = "block";
+									$("#result").text(result.msg);
+									if(result.msg != "An error occured while retriving your details.Please fill those again"){
+										replyBackToVisitor(response);
+									} 
+								},
+								error: function(XMLHttpRequest, textStatus, errorThrown) { 	
+									console.log("Status: " + textStatus); console.log("Error: " + errorThrown); 
+					           }  
+					           
+					        });//end of ajax
+					}//end of flag==true					
 			       
-			 });  
+			 });  //end of contactUs form submit 
+			 
+			 //resetting form on reset btn click
+			 $('#resetBtn').click(function(e){
+				 $(".error").remove();
+				 $("#contactUs")[0].reset();
+			 });
 				
-			});
-			
-			/* function formSubmit(){
-				console.log("Inside form submit !!!");
-		    	e.preventDefault();
-		    	response.visitorName = $("#name").val();
-				response.visitorEmailId = $("#email").val();
-				response.visitorMobileNumber = $("#mobile").val();
-				response.visitorMessage = $("#message").val();
-				console.log("response.visitorName: "+response.visitorName+" response.visitorEmailId: "+response.visitorEmailId+" response.visitorMobileNumber: "+response.visitorMobileNumber
-						+" response.visitorMessage: "+response.visitorMessage);
-				$("#contactUs")[0].reset();
-				showProgress();
-		       $.ajax({
-		           type: "POST", // method attribute of form
-		           url: contextPath+"/sendMailTemplate",  // action attribute of form
-		           data : response,
-		           async : true,
-		           success : function(result) {
-						console.log("Inside success !!!"+result.msg);
-						hideProgress();
-						modal.style.display = "block";
-						$("#result").text(result.msg);
-						if(result.msg != "An error occured while retriving your details.Please fill those again"){
-							replyBackToVisitor(response);
-						} 
-					},
-					error: function(XMLHttpRequest, textStatus, errorThrown) { 	
-						console.log("Status: " + textStatus); console.log("Error: " + errorThrown); 
-		           }  
-		           
-		        });
-				
-			} */
+			}); //end of document.ready function			
 			
 			function replyBackToVisitor(response) {
 				console.log("Inside replyBackToVisitor function!!!"); 

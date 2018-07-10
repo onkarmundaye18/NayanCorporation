@@ -4680,3 +4680,14 @@ div#spinner {
 			}
            
 		}
+		
+/* added by onkar for line background*/
+div#banner{
+	background: url("../../images/homeImage.jpg") top center no-repeat;background-size:cover;
+	height: 200px;
+}
+
+div#banner .pattern {
+  background: url("../../images/line-pattern.png") repeat;
+  height: 200px;
+}
